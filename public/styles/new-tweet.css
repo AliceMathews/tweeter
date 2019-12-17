@@ -1,0 +1,29 @@
+.button { 
+  font-family: 'Bungee', sans-serif;
+  background-color: #4056A1;
+  color: white;
+  border-width: 0;
+}
+
+.counter { 
+  font-family: 'Bungee', sans-serif;
+
+}
+
+textarea { 
+  width: 100%;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-bottom-width: thick;
+  background: transparent;
+  resize: none;
+  height: 45px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.button-count { 
+  display: flex;
+  justify-content: space-between;
+}
