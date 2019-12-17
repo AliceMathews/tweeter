@@ -27,3 +27,11 @@ textarea {
   display: flex;
   justify-content: space-between;
 }
+
+.counter.black {
+  color: black;
+}
+
+.counter.red {
+  color: red;
+}
