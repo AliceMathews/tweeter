@@ -1,0 +1,54 @@
+#tweetContainer { 
+  margin-top: 60px;
+  border: thick solid darkgrey;
+  padding: 15px;
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userIcon { 
+  display: flex;
+  align-items: center;
+}
+
+
+.avatar { 
+  height: 50px;
+}
+
+.username {
+  visibility: hidden;
+}
+
+.tweetContent { 
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom: thick solid darkgrey;
+}
+
+footer { 
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  font-size: 17px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#tweetContainer:hover { 
+  box-shadow: 10px 10px lightgrey;
+}
+
+#tweetContainer:hover .username { 
+  visibility: visible;
+  font-weight: bold;
+  color: lightgray;
+}
