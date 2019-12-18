@@ -6,6 +6,40 @@
 $(document).ready(function() { 
 
   const createTweetElement = function (tweetObj) { 
+    let dateString = '';
+    let timeDiff = 0;
+    let unit = '';
+    
+    const date = new Date(tweetObj.created_at)
+    const tweetDate = {};
+    tweetDate.year = date.getFullYear();
+    tweetDate.month = date.getMonth()+1;
+    tweetDate.day = date.getDate();
+
+    const todaysDate = new Date();
+    const todayDate = {};
+    todayDate.year = todaysDate.getFullYear();
+    todayDate.month = todaysDate.getMonth()+1;
+    todayDate.day = todaysDate.getDate();
+    
+    if (tweetDate.year !== todayDate.year) { 
+      timeDiff = Math.abs(tweetDate.year - todayDate.year);
+      unit = 'year';
+    } else if (tweetDate.month !== todayDate.month) { 
+      timeDiff = Math.abs(tweetDate.month - tweetDate.month)
+      unit = 'month';
+    } else { 
+      timeDiff = Math.abs(tweetDate.day - todayDate.day)
+      unit = 'day';
+    }
+    
+    if (timeDiff > 1) {
+      dateString = `${timeDiff} ${unit}s ago`
+    } else { 
+      dateString = `${timeDiff} ${unit} ago`
+    }
+
+
     const html = `
       <article class="tweet">
         <header>
@@ -17,7 +51,7 @@ $(document).ready(function() {
         </header>
         <section class="tweetContent">${tweetObj.content.text}</section>
         <footer>
-          <span>${tweetObj.created_at}</span>
+          <span>${dateString}</span>
           <span>
             <i>i1</i>
             <i>i2</i>
