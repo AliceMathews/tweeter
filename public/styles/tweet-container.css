@@ -1,4 +1,4 @@
-#tweetContainer { 
+.tweet { 
   margin-top: 60px;
   border: thick solid darkgrey;
   padding: 15px;
@@ -14,6 +14,8 @@ header {
 .userIcon { 
   display: flex;
   align-items: center;
+  width: 140px;
+  justify-content: space-between;
 }
 
 
@@ -43,11 +45,11 @@ footer {
   padding-right: 15px;
 }
 
-#tweetContainer:hover { 
+.tweet:hover { 
   box-shadow: 10px 10px lightgrey;
 }
 
-#tweetContainer:hover .username { 
+.tweet:hover .username { 
   visibility: visible;
   font-weight: bold;
   color: lightgray;
