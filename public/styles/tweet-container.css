@@ -14,13 +14,12 @@ header {
 .userIcon { 
   display: flex;
   align-items: center;
-  width: 140px;
-  justify-content: space-between;
 }
 
 
 .avatar { 
   height: 50px;
+  padding-right: 10px;
 }
 
 .username {
