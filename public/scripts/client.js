@@ -5,6 +5,33 @@
  */
 $(document).ready(function() { 
 
+  //POST tweets asynchronously
+  $('#postTweet').submit(function(event) { 
+    event.preventDefault();
+    console.log($(this).serialize())
+    $.ajax("/tweets/", {
+      type: "POST",
+      data: $(this).serialize()
+    })
+    .then((res) => {
+      console.log('success: ', res)
+    })
+    // .catch((err) => { 
+    //   console.log('error: ', err)
+    // })
+  });
+
+  //Fetch tweets
+  const loadTweets = function() { 
+    $.ajax("/tweets")
+    .then((res) => {
+      console.log(res)
+    })
+  }
+  loadTweets();
+
+  /********************************************************************************************
+  */
   const createTweetElement = function (tweetObj) { 
     let dateString = '';
     let timeDiff = 0;
