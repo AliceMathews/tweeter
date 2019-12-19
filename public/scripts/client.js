@@ -8,12 +8,17 @@ $(document).ready(function() {
   //POST tweets asynchronously
   $('#postTweet').submit(function(event) { 
     event.preventDefault();
+    $("#error-box").addClass("hidden");
+    $("#emptyTweet").addClass("hidden");
+    $("#LongTweet").addClass("hidden");
 
     const text = $('#newTweet').val();
     if (text === "") { 
-      window.alert("Your tweet is empty!");
+      $("#error-box").removeClass("hidden");
+      $("#emptyTweet").removeClass("hidden");
     } else if (text.length > 140) { 
-      window.alert("Your tweet is too long!");
+      $("#error-box").removeClass("hidden");
+      $("#longTweet").removeClass("hidden");
     } else { 
       $.ajax("/tweets/", {
         type: "POST",
@@ -24,7 +29,13 @@ $(document).ready(function() {
         // const resArr = [];
         // resArr.push(res)
         // renderTweets(resArr);
+        $('#newTweet').val('');
+        // $('#new-tweet-form').addClass('hidden');
         loadTweets();
+
+        $('.new-tweet').toggle('slow', function () {
+          
+        });
 
       })
       // .catch((err) => { 
@@ -50,6 +61,14 @@ $(document).ready(function() {
 
   /********************************************************************************************
   */
+  $('.tweetButton').click(function() {
+    $('.new-tweet').slideDown('slow', function () {
+      $('#newTweet').focus();
+    });
+  });
+
+  /********************************************************************************************
+  */
   const createTweetElement = function (tweetObj) { 
     const date = new Date(tweetObj.created_at);
     const dateString = timeCalc(date);
@@ -63,7 +82,7 @@ $(document).ready(function() {
           </div>
           <span class="username">${tweetObj.user.handle}</span>
         </header>
-        <p class="tweetContent">${tweetObj.content.text}</p>
+        <p class="tweetContent">${escape(tweetObj.content.text)}</p>
         <footer>
           <span>${dateString}</span>
           <span>
@@ -120,4 +139,10 @@ const timeCalc = function(date) {
   } else {
     return 'Today'
   }
+}
+
+const escape = function(str) { 
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 }

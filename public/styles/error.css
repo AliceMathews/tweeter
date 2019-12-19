@@ -1,0 +1,20 @@
+#error-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: thick solid red;
+  color: red;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#error-box.hidden {
+  display: none;
+}
+
+#error-box img {
+  height: 25px;
+  width: auto;
+}

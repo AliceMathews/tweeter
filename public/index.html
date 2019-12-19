@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/error.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -27,6 +28,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">tweeter</span>
+      <button class="tweetButton">Write a new tweet</button>
     </nav>
 
      <!-- Header -->
@@ -36,7 +38,7 @@
             <img src="/images/profile-hex.png"> 
         </div>
         <div>
-            <h2>Your Name</h2>
+          <h2>Alice Mathews</h2>
         </div>
 
       </div>
@@ -44,38 +46,25 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-        <section class="new-tweet">
-            <!-- <h2>Compose Tweet</h2> -->
-            <form id="postTweet" method="POST" action="/tweets/">
-              <textarea id="newTweet" name="text" placeholder="What are you humming about?"></textarea>
-              <div class="button-count">
-                <input class="button" type="submit" value="Tweet">
-                <span class="counter">140</span>
-              </div>
-              
-            </form>
-          </section>
+      <section id="error-box" class="hidden">
+        <img src="/images/error-icon.png">
+        <span id="longTweet" class="hidden">STOP!    Your tweet is too long. Please keep it under 140 characters</span>
+        <span id="emptyTweet" class="hidden">STOP!    You can't tweet nothing! Please think of something to say</span>
+        <img src="/images/error-icon.png">
+      </section>
+      <section id = "new-tweet-form" class="new-tweet hidden">
+        <!-- <h2>Compose Tweet</h2> -->
+        <form id="postTweet" method="POST" action="/tweets/">
+          <textarea id="newTweet" name="text" placeholder="What are you humming about?"></textarea>
+          <div class="button-count">
+            <input class="button" type="submit" value="Tweet">
+            <span class="counter">140</span>
+          </div>
+          
+        </form>
+      </section>
 
-          <section id="tweets-container">
-            <!-- <article class="tweet">
-              <header>
-                <div class="userIcon">
-                  <img class="avatar" src="/images/profile-hex.png">
-                  <span>Newton</span> 
-                </div>
-                <span class="username">@SirIsaac</span>
-              </header>
-              <section class="tweetContent">If I have seen further it is by standing on the shoulders of giants</section>
-              <footer>
-                <span>10 days ago</span>
-                <span>
-                  <i>i1</i>
-                  <i>i2</i>
-                  <i>i3</i>
-                </span>
-              </footer>
-            </article> -->
-          </section>
+        <section id="tweets-container"></section>
     </main>
   </body>
 </html>

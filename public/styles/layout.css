@@ -31,3 +31,7 @@ main {
   margin-right: 5%;
   background-color: #f4f1ec;
 }
+
+.hidden{
+  display: none;
+}

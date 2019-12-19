@@ -18,3 +18,18 @@ nav * {
   bottom: 0;
   margin: 1.5em;
 }
+
+nav button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-family: sans-serif;
+  background: transparent;
+  border: 0;
+  color: white;
+}
+
+nav button:hover { 
+  cursor: pointer;
+}
+
