@@ -3,8 +3,10 @@
 }
 
 .tweet { 
-  margin-top: 60px;
-  margin-bottom: 60px;
+  /* margin-top: 60px;
+  margin-bottom: 60px; */
+  margin-top: 2em;
+  margin-bottom: 2em;
   border: thick solid darkgrey;
   padding: 15px;
 }
@@ -58,4 +60,20 @@ footer {
   visibility: visible;
   font-weight: bold;
   color: lightgray;
+}
+
+
+@media only screen and (max-width: 420px) {
+
+  .tweet { 
+    font-size: smaller;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .tweetContent {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }

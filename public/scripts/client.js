@@ -62,7 +62,7 @@ $(document).ready(function() {
   /********************************************************************************************
   */
   $('.tweetButton').click(function() {
-    $('.new-tweet').slideDown('slow', function () {
+    $('.new-tweet').slideToggle('slow', function () {
       $('#newTweet').focus();
     });
   });

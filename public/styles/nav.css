@@ -24,13 +24,12 @@ nav div {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 1em;
-  margin-right: 1em;
 }
 
 nav span {
-  margin-bottom: 1em;
-  margin-left: 1em;
+  /* margin-bottom: 1em;
+  margin-left: 1em; */
+  margin: 1em;
 }
 
 .tweetButton { 
@@ -38,6 +37,9 @@ nav span {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  margin: 1em;
+  /* margin-bottom: 1em;
+  margin-right: 1em; */
 }
 
 nav button {
@@ -57,4 +59,18 @@ nav div img {
   width: auto;
   transform: rotate(90deg);
   mix-blend-mode: multiply;
+}
+
+
+@media only screen and (max-width: 420px) {
+  nav { 
+    font-size: smaller;
+    height: 90px;
+  } 
+
+  nav div {
+    height: 90px;
+  }
+
+  
 }
