@@ -25,6 +25,21 @@
   text
 } */
 
+@media only screen and (min-width: 1024px) { 
+  
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  #mainHeader { 
+    margin-left: 5%;
+    margin-top: 160px;
+    flex-grow: 2;
+    /* min-width: 400px;
+  } */
+}
 
 
 

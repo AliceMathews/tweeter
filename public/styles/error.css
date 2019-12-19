@@ -4,10 +4,13 @@
   align-items: center;
   padding: 10px;
   border: thick solid red;
+  border-radius: 10px;
   color: red;
   font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  text-align: center;
+  /* margin-top: 20px;
+  margin-bottom: 20px; */
+  margin: 20px 50px;
 }
 
 #error-box.hidden {
@@ -17,4 +20,5 @@
 #error-box img {
   height: 25px;
   width: auto;
+  margin: 5px;
 }
