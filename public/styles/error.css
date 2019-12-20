@@ -20,3 +20,15 @@
   width: auto;
   margin: 5px;
 }
+
+
+/*
+ * Adjusted layout for mobile devices
+ */
+
+ @media only screen and (max-width: 420px) {
+  #error-box { 
+    font-size: 15px;
+    margin: 10px 5px;
+  } 
+}
