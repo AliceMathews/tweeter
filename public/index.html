@@ -34,42 +34,41 @@
           <button>Write a new tweet</button>
           <img id="arrow" src="/images/arrows.png">
         </div>
-
       </div>
     </nav>
 
      <!-- Header -->
     <header id="mainHeader">
-      <div class="absolute">
-            <img src="/images/profile-hex.png"> 
-        
-          <h2>Alice Mathews</h2>
-      
-
+      <div class="user">
+        <img src="/images/profile-hex.png"> 
+        <h2>Alice Mathews</h2>
       </div>
-  </header>
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section id="error-box" class="hidden">
-        <img src="/images/error-icon.png">
-        <span id="longTweet" class="hidden">STOP!    Your tweet is too long. Please keep it under 140 characters</span>
-        <span id="emptyTweet" class="hidden">STOP!    You can't tweet nothing! Please think of something to say</span>
-        <img src="/images/error-icon.png">
-      </section>
-      <section id = "new-tweet-form" class="new-tweet hidden">
-        <!-- <h2>Compose Tweet</h2> -->
-        <form id="postTweet" method="POST" action="/tweets/">
-          <textarea id="newTweet" name="text" placeholder="What are you humming about?"></textarea>
-          <div class="button-count">
+
+      <!-- New tweet form -->
+      <section class="new-tweet hidden">
+        <!-- Error message -->
+        <section id="error-box" class="hidden">
+          <img src="/images/error-icon.png">
+          <span id="longTweet" class="hidden">STOP!    Your tweet is too long. Please keep it under 140 characters</span>
+          <span id="emptyTweet" class="hidden">STOP!    You can't tweet nothing! Please think of something to say</span>
+          <img src="/images/error-icon.png">
+        </section>
+
+        <form id="postTweet">
+          <textarea id="tweetText" name="text" placeholder="What are you humming about?"></textarea>
+          <div>
             <input class="button" type="submit" value="Tweet">
             <span class="counter">140</span>
           </div>
-          
         </form>
       </section>
 
-        <section id="tweets-container"></section>
+      <!-- Container for tweets -->
+      <section id="tweets-container"></section>
     </main>
   </body>
 </html>
