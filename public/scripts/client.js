@@ -78,10 +78,10 @@ const createTweetElement = function (tweetObj) {
       <p class="tweetContent">${escape(tweetObj.content.text)}</p>
       <footer>
         <span>${dateString}</span>
-        <span>
-          <i>i1</i>
-          <i>i2</i>
-          <i>i3</i>
+        <span class="icons">
+          <img src="/images/flag.png">
+          <img src="/images/reTweet.png">
+          <img src="/images/thumbsUp.png">
         </span>
       </footer>
     </article>

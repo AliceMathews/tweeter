@@ -58,6 +58,19 @@ footer {
   color: lightgray;
 }
 
+#tweets-container img {
+  height: 15px;
+  width: auto;
+  opacity: 0.5;
+}
+
+.icons {
+  width: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /*
  * Adjusted layout for mobile devices
  */
