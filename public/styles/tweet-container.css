@@ -58,7 +58,7 @@ footer {
   color: lightgray;
 }
 
-#tweets-container img {
+.icons img {
   height: 15px;
   width: auto;
   opacity: 0.5;

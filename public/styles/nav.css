@@ -12,6 +12,7 @@ nav {
 
 .logo { 
   font-family: 'Bungee', sans-serif;
+  font-size: 40px;
 }
 
 nav div {
@@ -56,4 +57,10 @@ nav div img {
     font-size: smaller;
     height: 90px;
   } 
+  .logo {
+    font-size: 30px;
+  }
+  nav button { 
+    font-size: smaller;
+  }
 }
