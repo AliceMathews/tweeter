@@ -38,3 +38,7 @@ textarea {
 .counter.red {
   color: red;
 }
+
+textarea:focus {
+  outline: none;
+}
