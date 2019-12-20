@@ -37,6 +37,8 @@
     margin-left: 5%;
     margin-top: 160px;
     flex-grow: 2;
+    border: 5px solid lightgrey;
+    border-radius: 40px;
   } 
 
 }
