@@ -33,6 +33,7 @@ $(document).ready(function() {
       })
       .then((res) => {
         $('#tweetText').val('');
+        $(".counter").html('140');
         loadTweets();
         $('.new-tweet').toggle('slow');
       })
