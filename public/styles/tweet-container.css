@@ -3,14 +3,11 @@
 }
 
 .tweet { 
-  /* margin-top: 60px;
-  margin-bottom: 60px; */
   margin-top: 2em;
   margin-bottom: 2em;
   border: thick solid darkgrey;
   padding: 15px;
 }
-
 
 header {
   display: flex;
@@ -23,13 +20,12 @@ header {
   align-items: center;
 }
 
-
 .avatar { 
   height: 50px;
   padding-right: 10px;
 }
 
-.username {
+.handle {
   visibility: hidden;
 }
 
@@ -56,15 +52,17 @@ footer {
   box-shadow: 10px 10px lightgrey;
 }
 
-.tweet:hover .username { 
+.tweet:hover .handle { 
   visibility: visible;
   font-weight: bold;
   color: lightgray;
 }
 
+/*
+ * Adjusted layout for mobile devices
+ */
 
 @media only screen and (max-width: 420px) {
-
   .tweet { 
     font-size: smaller;
     margin-top: 1em;

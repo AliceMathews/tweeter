@@ -1,4 +1,4 @@
-nav { 
+nav {
   position: fixed;
   height: 120px;
   left: 0; 
@@ -7,29 +7,18 @@ nav {
   z-index: 2;
   background-color: #4056A1;
   color: white;
+  padding: 1em;
  }
 
 .logo { 
   font-family: 'Bungee', sans-serif;
 }
 
-/* nav * { 
-  position: absolute;
-  bottom: 0;
-  margin: 1.5em;
-} */
-
 nav div {
-  height: 120px;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-}
-
-nav span {
-  /* margin-bottom: 1em;
-  margin-left: 1em; */
-  margin: 1em;
 }
 
 .tweetButton { 
@@ -37,9 +26,6 @@ nav span {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  margin: 1em;
-  /* margin-bottom: 1em;
-  margin-right: 1em; */
 }
 
 nav button {
@@ -53,7 +39,6 @@ nav button:hover {
   cursor: pointer;
 }
 
-
 nav div img { 
   height: 20px;
   width: auto;
@@ -62,15 +47,13 @@ nav div img {
 }
 
 
+/*
+ * Adjusted layout for mobile devices
+ */
+
 @media only screen and (max-width: 420px) {
   nav { 
     font-size: smaller;
     height: 90px;
   } 
-
-  nav div {
-    height: 90px;
-  }
-
-  
 }
