@@ -11,14 +11,14 @@ Screenshot of the page on load
 Screenshot - when 'create new tweet' button has been clicked. Cursor defaults to the text area.
 !["Screenshot - when 'create new tweet' button has been clicked. Cursor defaults to the text area."](https://github.com/AliceMathews/tweeter/blob/master/docs/new-tweet.png)
 
+Screenshot - tweet counter dynamically counts down as user types their tweet
+![Screenshot - tweet counter dynamically counts down as user types their tweet](https://github.com/AliceMathews/tweeter/blob/master/docs/tweetCounter.png)
+
+Screenshot - tweet counter changes to red if the user goes over the limit. If they try to submit they will get an error message.
+![Screenshot - tweet counter changes to red if the user goes over the limit. If they try to submit they will get an error message.](https://github.com/AliceMathews/tweeter/blob/master/docs/error2.png)
+
 Screenshot - tweet button clicked, form closes and new tweet loads at top of page
 ![Screenshot - tweet button clicked, form closes and new tweet loads at top of page](https://github.com/AliceMathews/tweeter/blob/master/docs/new-tweet-load.png)
-
-Screenshot - tweet counter dynamically counts down as user types their tweet
-![Screenshot - tweet counter dynamically counts down as user types their tweet](https://github.com/AliceMathews/tweeter/blob/master/docs/tweetCounter.png)
-
-Screenshot - tweet counter dynamically counts down as user types their tweet
-![Screenshot - tweet counter dynamically counts down as user types their tweet](https://github.com/AliceMathews/tweeter/blob/master/docs/tweetCounter.png)
 
 Screenshot - iPad view
 ![Screenshot - iPad view](https://github.com/AliceMathews/tweeter/blob/master/docs/ipadview.png)
