@@ -110,12 +110,16 @@ const timeCalc = function(date) {
   tweetDate.year = date.getFullYear();
   tweetDate.month = date.getMonth()+1;
   tweetDate.day = date.getDate();
+  tweetDate.hour = date.getHours();
+  tweetDate.minute = date.getMinutes();
 
   const todaysDate = new Date();
   const todayDate = {};
   todayDate.year = todaysDate.getFullYear();
   todayDate.month = todaysDate.getMonth()+1;
   todayDate.day = todaysDate.getDate();
+  todayDate.hour = todaysDate.getHours();
+  todayDate.minute = todaysDate.getMinutes();
   
   if (tweetDate.year !== todayDate.year) { 
     timeDiff = Math.abs(tweetDate.year - todayDate.year);
@@ -123,9 +127,15 @@ const timeCalc = function(date) {
   } else if (tweetDate.month !== todayDate.month) { 
     timeDiff = Math.abs(tweetDate.month - tweetDate.month)
     unit = 'month';
-  } else { 
+  } else if (tweetDate.day !== todayDate.day) { 
     timeDiff = Math.abs(tweetDate.day - todayDate.day)
     unit = 'day';
+  } else if (tweetDate.hour !== todayDate.hour) { 
+    timeDiff = Math.abs(tweetDate.hour - todayDate.hour)
+    unit = 'hour';
+  } else { 
+    timeDiff = Math.abs(tweetDate.minute - todayDate.minute)
+    unit = 'minute';
   }
   
   if (timeDiff > 1) {
@@ -133,7 +143,7 @@ const timeCalc = function(date) {
   } else if (timeDiff === 1) { 
     return `${timeDiff} ${unit} ago`
   } else {
-    return 'Today'
+    return 'Just now'
   }
 }
 
