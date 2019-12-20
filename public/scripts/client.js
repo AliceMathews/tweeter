@@ -1,18 +1,25 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 $(document).ready(function() { 
+  
+  loadTweets();
 
-  //POST tweets asynchronously
+  /* Fetch tweets
+  /*********************************************************************************************/
+  $('.tweetButton').click(function() {
+    $('.new-tweet').slideToggle('slow', function () {
+      $('#tweetText').focus();
+    });
+  });
+
+  /* POST tweets asynchronously
+  /*********************************************************************************************/
   $('#postTweet').submit(function(event) { 
     event.preventDefault();
+
     $("#error-box").addClass("hidden");
     $("#emptyTweet").addClass("hidden");
     $("#LongTweet").addClass("hidden");
 
-    const text = $('#newTweet').val();
+    const text = $('#tweetText').val();
     if (text === "") { 
       $("#error-box").removeClass("hidden");
       $("#emptyTweet").removeClass("hidden");
@@ -25,87 +32,75 @@ $(document).ready(function() {
         data: $(this).serialize()
       })
       .then((res) => {
-        console.log('success: ', res)
-        // const resArr = [];
-        // resArr.push(res)
-        // renderTweets(resArr);
-        $('#newTweet').val('');
-        // $('#new-tweet-form').addClass('hidden');
+        $('#tweetText').val('');
         loadTweets();
-
-        $('.new-tweet').toggle('slow', function () {
-          
-        });
-
+        $('.new-tweet').toggle('slow');
       })
       // .catch((err) => { 
       //   console.log('error: ', err)
       // })
-
     }
-
-
   });
-
-  //Fetch tweets
-  const loadTweets = function() { 
-    $.ajax("/tweets")
-    .then((res) => {
-      renderTweets(res);
-    })
-    // .catch((err) => { 
-    //   console.log(err);
-    // })
-  }
-  loadTweets();
-
-  /********************************************************************************************
-  */
-  $('.tweetButton').click(function() {
-    $('.new-tweet').slideToggle('slow', function () {
-      $('#newTweet').focus();
-    });
-  });
-
-  /********************************************************************************************
-  */
-  const createTweetElement = function (tweetObj) { 
-    const date = new Date(tweetObj.created_at);
-    const dateString = timeCalc(date);
-
-    const html = `
-      <article class="tweet">
-        <header>
-          <div class="userIcon">
-            <img class="avatar" src=${tweetObj.user.avatars}>
-            <span>${tweetObj.user.name}</span> 
-          </div>
-          <span class="username">${tweetObj.user.handle}</span>
-        </header>
-        <p class="tweetContent">${escape(tweetObj.content.text)}</p>
-        <footer>
-          <span>${dateString}</span>
-          <span>
-            <i>i1</i>
-            <i>i2</i>
-            <i>i3</i>
-          </span>
-        </footer>
-      </article>
-    `
-    return html;
-  }
-  
-  const renderTweets = function(data) { 
-    $('#tweets-container').empty();
-    for (const tweet of data) {
-      const $tweet = createTweetElement(tweet);
-      $('#tweets-container').prepend($tweet);
-    }
-  };
 
 });
 
+
+/*********************************************************************************************/
+/* Fetch tweets
+/*********************************************************************************************/
+const loadTweets = function() { 
+  $.ajax("/tweets")
+  .then((res) => {
+    renderTweets(res);
+  })
+  // .catch((err) => { 
+  //   console.log(err);
+  // })
+}
+  
+/*********************************************************************************************/
+/* Create tweet DOM element
+/*********************************************************************************************/
+const createTweetElement = function (tweetObj) { 
+  const date = new Date(tweetObj.created_at);
+  const dateString = timeCalc(date);
+
+  const html = `
+    <article class="tweet">
+      <header>
+        <div class="userIcon">
+          <img class="avatar" src=${tweetObj.user.avatars}>
+          <span>${tweetObj.user.name}</span> 
+        </div>
+        <span class="handle">${tweetObj.user.handle}</span>
+      </header>
+      <p class="tweetContent">${escape(tweetObj.content.text)}</p>
+      <footer>
+        <span>${dateString}</span>
+        <span>
+          <i>i1</i>
+          <i>i2</i>
+          <i>i3</i>
+        </span>
+      </footer>
+    </article>
+  `
+  return html;
+}
+  
+/*********************************************************************************************/
+/* Render tweets
+/*********************************************************************************************/
+const renderTweets = function(data) { 
+  $('#tweets-container').empty();
+  for (const tweet of data) {
+    const $tweet = createTweetElement(tweet);
+    $('#tweets-container').prepend($tweet);
+  }
+};
+
+
+//Helper functions----------------------------------------------------------------------------------------------
 const timeCalc = function(date) { 
   let timeDiff = 0;
   let unit = '';
