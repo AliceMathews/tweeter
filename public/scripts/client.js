@@ -37,9 +37,6 @@ $(document).ready(function() {
         loadTweets();
         $('.new-tweet').toggle('slow');
       })
-      // .catch((err) => { 
-      //   console.log('error: ', err)
-      // })
     }
   });
 
@@ -54,9 +51,6 @@ const loadTweets = function() {
   .then((res) => {
     renderTweets(res);
   })
-  // .catch((err) => { 
-  //   console.log(err);
-  // })
 }
   
 /*********************************************************************************************/
